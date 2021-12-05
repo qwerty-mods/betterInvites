@@ -278,8 +278,14 @@ module.exports = class BetterInvites extends Plugin {
                     </div>
                 );
             }
+
+            if (this.settings.get("force-member-count", false)) {
+                res.props.children[2].props.children[1].props.children.props = {members: args.invite.approximate_member_count, membersOnline: args.invite.approximate_presence_count}
+            }
       
             return res;
         });
+        
+        GuildInvite.default.displayName = "GuildInvite";
     }
 }
