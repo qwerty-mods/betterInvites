@@ -220,7 +220,7 @@ module.exports = class BetterInvites extends Plugin {
                 );
             }
             if (!guild?.banner || (guild?.banner && !inBanner)) {
-                res.props.children[guild?.banner ? 2 : 1].props.children.splice(2, 0,
+                res.props.children[guild?.banner ? 1 : 2].props.children.splice(2, 0,
                     <div className="iconWrapper" style={wrapperStyle}>
                         <div style={verificationStyle}>
                             <Tooltip
